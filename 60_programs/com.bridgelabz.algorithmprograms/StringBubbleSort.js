@@ -1,6 +1,6 @@
 /*/**********************************************************************************
- *  Purpose         : Sorts the Integer array using Insertion Sort.
- *  @file           : IntegerInsertionSort.js
+ *  Purpose         : Sort a string array using Bubble Sort.
+ *  @file           : StringBubbleSort.js
  *  @author         : Shweta Bochare
  *  @version        : 1.0
  *  @since          : 12-09-2018
@@ -23,7 +23,7 @@ var utility = require('../utility/Utility');
 
 function arrayelements(size)
 {
-    var arr=[];
+    var array=[], result = [];
     var len=parseInt(size);
     console.log("Enter array elements:");//taking array elements from user
     recurrsion(len);
@@ -34,16 +34,19 @@ function arrayelements(size)
         {   
             rl.question('',function(i)
             {      
-                arr.push(parseInt(i));
+                array.push(i.toString());
                 len--;
                 recurrsion(len);      
             });
         }
         else
-        {
-            //rl.close();
-            
-            utility.insertionSortInt(arr,size);
+        {           
+           result = utility.bubbleSortString(array,size);
+           console.log("Sorted Elements of array using Bubble Sort are :");
+            for(let i=0;i<size;i++)
+            {
+                console.log(result[i]);
+            }
             process.exit();
  
         }

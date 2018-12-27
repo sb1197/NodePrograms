@@ -1,6 +1,6 @@
 /*/**********************************************************************************
- *  Purpose         : Sorts the Integer array using Insertion Sort.
- *  @file           : IntegerInsertionSort.js
+ *  Purpose         : Search a String using Binary Search.
+ *  @file           : BinarySearchString.js
  *  @author         : Shweta Bochare
  *  @version        : 1.0
  *  @since          : 12-09-2018
@@ -34,7 +34,7 @@ function arrayelements(size)
         {   
             rl.question('',function(i)
             {      
-                arr.push(parseInt(i));
+                arr.push(i.toString());
                 len--;
                 recurrsion(len);      
             });
@@ -43,9 +43,13 @@ function arrayelements(size)
         {
             //rl.close();
             
-            utility.insertionSortInt(arr,size);
-            process.exit();
- 
+            rl.question('Enter element to search :',(str)=>
+            {
+                var search = str.toString(); 
+                utility.binarySearchStr(size,arr,search);
+                process.exit();
+            });
+           
         }
     }
 }

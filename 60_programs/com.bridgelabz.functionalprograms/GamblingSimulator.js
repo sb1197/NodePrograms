@@ -1,3 +1,15 @@
+/*/**********************************************************************************
+ *  Purpose         : Gambling Simulator to calculate the percentage of games win 
+ *                      and bets made.
+ *  @file           : GamblingSimulator.js
+ *  @author         : Shweta Bochare
+ *  @version        : 1.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+/*
+ *readline module provides an interface for reading data from a Readable stream one line 
+*/
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,

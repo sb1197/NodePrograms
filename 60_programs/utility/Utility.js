@@ -451,7 +451,7 @@ module.exports = {
 				var z = [];
 				z = strArray.toCharArray;
 				z.sort();
-				str1 = String.valueOf(z);
+				str1 = z.charAt(0);
 				br[i] = str1;
 			}
 		
@@ -499,6 +499,10 @@ module.exports = {
 
 /*****************************************************************************/
 
+/**
+ * 
+ * @param {*} amount is user input cash
+ */
 	countCurrency(amount)
 	{
 		var notes = [2000, 500, 200, 100, 50, 20, 10, 5, 1]; 
@@ -608,15 +612,21 @@ module.exports = {
 	binarySearchInteger(n,arr,number)
 	{	
 		var size = parseInt(n);
-		console.log("Array is :");
-            for(let i=0;i<size;i++)
-            {
-                console.log(arr[i]);
-			}
+		// console.log("Array is :");
+        // for(let i=0;i<size;i++)
+        // {
+        //     console.log(arr[i]);
+		// }
 			
 		//Binary search on array
 		var search = parseInt(number);
-		console.log("search num is :", search);
+		console.log("Search number is :", search);
+		arr.sort();
+		console.log("Sorted Array is :");
+        for(let i=0;i<size;i++)
+        {
+            console.log(arr[i]);
+		}
 		var first = 0, last = n-1;
 		var mid = Math.floor((first+last)/2);
 		// console.log("first  is :", first);
@@ -628,7 +638,7 @@ module.exports = {
 			first = mid + 1;    
 			else if ( arr[mid] == search )
 			{
-			    console.log(search + " found at location " + (mid+ 1) + ".");
+			    console.log(search + " found at location " + (mid+1) + ".");
 			    break;
 			}
 			else
@@ -652,7 +662,7 @@ module.exports = {
 			console.log(arr[i]);
 		}
 		
-		for (i=1; i<n; ++i) 
+		for (i=1; i<n; i++) 
 		{ 
 			var key = parseInt(arr[i]); 
 			var j = i-1; 
@@ -667,7 +677,7 @@ module.exports = {
 			} 
 			arr[j+1] = key; 
 		} 
-		console.log("Sorted Elements of Integer array are :");
+		console.log("Sorted Elements of Integer array using Insertion Sort are :");
 		for(i=0;i<n;i++)
 		{
 			console.log(arr[i]);
@@ -676,23 +686,370 @@ module.exports = {
 
 /*****************************************************************************/
 
-bubbleIntSort(ar, size)
-{
-	var i,j;
-	var k = parseInt(size);
-	for (i = 0; i < k-1; i++)
-	    for (j = 0; j < k-i-1; j++)
-	        if (ar[j] > ar[j+1])
-	        {
-	            // swap temp and arr[i]
-	            var temp = parseInt(ar[j]);
-	            ar[j] = ar[j+1];
-	            ar[j+1] = temp;
-	        }
-	return ar;
-},
+	bubbleIntSort(ar, size)
+	{
+		var i,j;
+		var k = parseInt(size);
+		for (i = 0; i < k-1; i++)
+			for (j = 0; j < k-i-1; j++)
+				if (ar[j] > ar[j+1])
+				{
+					// swap temp and arr[i]
+					var temp = parseInt(ar[j]);
+					ar[j] = ar[j+1];
+					ar[j+1] = temp;
+				}
+		return ar;
+	},
 
 /*****************************************************************************/
+
+	binarySearchStr(n,arr,str)
+	{	
+		var size = parseInt(n);
+		// console.log("Array is :");
+        // for(let i=0;i<size;i++)
+        // {
+        //     console.log(arr[i]);
+		// }
+			
+		//Binary search on array
+		var search = str.toString();
+		console.log("search string is :", search);
+		arr.sort();
+		console.log("Sorted Array is :");
+        for(let i=0;i<size;i++)
+        {
+            console.log(arr[i]);
+		}
+		var first = 0, last = n-1;
+		var mid = Math.floor((first+last)/2);
+		// console.log("first  is :", first);
+		// console.log("last  is :", last);
+		// console.log("mid  is :", mid);
+		while( first <= last )
+	    {
+	    	if ( arr[mid] < search )
+			first = mid + 1;    
+			else if ( arr[mid] == search )
+			{
+			    console.log(search + " found at location " + (mid+1) + ".");
+			    break;
+			}
+			else
+			    last = mid - 1;
+			
+				mid = Math.floor((first + last)/2);
+		}
+		if (first > last)
+		    console.log(search + " isn't present in the list.\n");
+				
+	},
+
+/*****************************************************************************/
+
+	bubbleSortString(array, size)
+	{
+		var i,j;
+		var k = parseInt(size);
+		for (i = 0; i < k-1; i++)
+			for (j = 0; j < k-i-1; j++)
+				if (array[j] > array[j+1])
+				{
+					// swap temp and arr[i]
+					var temp = array[j].toString();
+					array[j] = array[j+1];
+					array[j+1] = temp;
+				}
+		return array;
+	},
+
+/*****************************************************************************/
+
+	insertionSortString(arr, size)
+	{
+		var i , n = parseInt(size) ;
+		console.log("Elements of String array are :");
+		for(i=0;i<n;i++)
+		{
+			console.log(arr[i]);
+		}
+		
+		for (i=1; i<n; i++) 
+		{ 
+			var key = arr[i].toString(); 
+			//console.log('key is :',key.toString());
+			var j = i-1; 
+
+			/* Move elements of arr[0..i-1], that are 
+			greater than key, to one position ahead 
+			of their current position */
+			while (j>=0 && arr[j] > key) 
+			{ 
+				arr[j+1] = arr[j]; 
+				j = j-1; 
+			} 
+			arr[j+1] = key; 
+		} 
+		console.log("Sorted Elements of String array using Insertion Sort are :");
+		for(i=0;i<n;i++)
+		{
+			console.log(arr[i]);
+		}
+	},
+
+/*****************************************************************************/
+
+	strIterativePermutation(char_arr, i)
+	{	
+		var utility = require('../utility/Utility');
+	
+		// console.log('char_array is :');
+		// for(let p= 0;p<char_arr.length;p++)
+		// {
+		// 	console.log(char_arr[p]);
+		// }	
+		
+		    if(i == char_arr.length-1)
+		    {
+		        // print the shuffled string 
+		            var str = "";
+		            for(var j=0; j<char_arr.length; j++)
+		            {
+		                str=str+char_arr[j];
+		            }
+		            console.log(str);
+		    }
+		    else
+		    {
+			    for(var j=i; j<char_arr.length; j++)
+			    {
+			        var tmp = char_arr[i];
+			        char_arr[i] = char_arr[j];
+			        char_arr[j] = tmp;
+			        utility.strIterativePermutation(char_arr,i+1);
+			        var tmp1 = char_arr[i];
+			        char_arr[i] = char_arr[j];
+			        char_arr[j] = tmp1;
+			      
+			    }
+		    }
+	},
+
+/*****************************************************************************/
+
+	mergeSort(arr,l,r) 
+	{ 
+		var utility = require('../utility/Utility');
+
+		if (l < r) 
+	    { 
+	        // Find the middle point 
+	        var m = Math.floor((l+r)/2); 
+	        // Sort first and second halves 
+	        utility.mergeSort(arr, l, m); 
+	        utility.mergeSort(arr , m+1, r); 
+	  
+			// Merge the sorted halves 
+	        utility.mergeStrArray(arr, l, m, r); 
+	    } 
+	}, 
+
+
+
+	mergeStrArray(arr, l, m, r) 
+	{ 
+	        // Find sizes of two subarrays to be merged 
+	        var n1 = m - l + 1; 
+	        var n2 = r - m; 
+	  
+	        /* Create temp arrays */
+	        var L = [n1]; 
+	        var R = [n2]; 
+	  
+	        /*Copy data to temp arrays*/
+	        for (let i=0; i<n1; ++i) 
+	            L[i] = arr[l + i]; 
+	        for (let j=0; j<n2; ++j) 
+	            R[j] = arr[m + 1+ j]; 
+	  
+	  
+	        /* Merge the temp arrays */
+	  
+	        // Initial indexes of first and second subarrays 
+	        var i = 0, j = 0; 
+	  
+	        // Initial index of merged subarry array 
+	        var k = l; 
+	        while (i < n1 && j < n2) 
+	        { 
+	            if (L[i].compareTo(R[j])<=0) 
+	            { 
+	                arr[k] = L[i]; 
+	                i++; 
+	            } 
+	            else
+	            { 
+	                arr[k] = R[j]; 
+	                j++; 
+	            } 
+	            k++; 
+	        } 
+	  
+	        /* Copy remaining elements of L[] if any */
+	        while (i < n1) 
+	        { 
+	            arr[k] = L[i]; 
+	            i++; 
+	            k++; 
+	        } 
+	  
+	        /* Copy remaining elements of R[] if any */
+	        while (j < n2) 
+	        { 
+	            arr[k] = R[j]; 
+	            j++; 
+	            k++; 
+	        } 
+	} ,
+	  
+	    // Main function that sorts arr[l..r] using 
+	    // merge() 
+
+
+/*****************************************************************************/
+
+	decimalToBinary(number)
+	{
+		var util = require('util');
+		var n = parseInt(number);
+		// array to store binary number 
+	        var binaryNum = [1000]; 
+	   
+	        // counter for binary array 
+	        var count = 0; 
+	        while (n > 0)  
+	        { 
+	            // storing remainder in binary array 
+	            binaryNum[count] = n % 2; 
+	            n = Math.floor(n / 2); 
+	            count++; 
+	        }     
+	
+	        // printing binary array in reverse order 
+	        for (let j = count - 1; j >= 0; j--) 
+	        {
+	            util.print(binaryNum[j]);	         
+			}
+			console.log();	
+	},
+
+/*****************************************************************************/
+
+	binaryToDecimal(number)
+	{
+		var util = require('util');
+		var n = parseInt(number);
+		var x = "";
+		var count = 0;
+		while(n > 0)
+		{
+		    a = n % 2;
+		    x = a + "" + x;
+			n = Math.floor(n / 2);
+			count++;
+			
+		}
+		console.log("Binary number:"+x);
+		console.log('length is :',count);
+		// var completeBinary = "";
+		
+			while(count!=8)
+			{
+				var str = '0';
+				for(let i=count;i<8;i++)
+				{				
+					x = str + x ;
+					count++;				
+				}			
+			}
+			console.log('Compelte Binary :',x);
+			var nibble1 = x.substring(0,4);
+			console.log('Nibble 1 :',nibble1);
+			var nibble2 = x.substring(4,8);
+			console.log('Nibble 2 :',nibble2);
+			var convertedDecimal = nibble2 + nibble1;
+			var result = parseInt(convertedDecimal,2);
+			console.log('Converted Binary to Decimal number is :',result);
+			process.exit();
+	
+	},
+
+/*****************************************************************************/
+
+	yourNumber(arr)
+	{
+		var utility = require('../utility/Utility');
+		var low = 0;
+		var high = arr.length-1;
+		console.log('Low Value :',low);
+		console.log('High Value :',high);
+		console.log("Think any number between "+low+" and "+ high);
+		utility.search(low, high);
+	},
+
+/*****************************************************************************/
+
+	search(low,high)
+	{
+		var utility = require('../utility/Utility');
+		const readline = require('readline');
+		const rl = readline.createInterface({
+			input: process.stdin,
+			output: process.stdout
+		  });
+
+		var mid=Math.floor((high+low)/2);
+		if(high==low)
+		{
+			console.log("your number is "+mid);
+			process.exit();
+		}
+		console.log("\n Is it less than "+mid);
+		//console.log("Press 1 or 0");
+		rl.question('Press yes or no',(reply)=>
+		{
+			var answer = reply.toString();
+			console.log('User answer is:',answer);
+			if(answer === 'yes')
+			utility.search(low,mid-1);
+			else 
+			utility.search(mid+1, high);
+		});
+		
+	},
+
+/*****************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

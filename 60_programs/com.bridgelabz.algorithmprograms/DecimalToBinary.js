@@ -1,6 +1,6 @@
 /*/**********************************************************************************
- *  Purpose         : Prints the Prime numbers that are Palindrome within given range.
- *  @file           : PrimeAnagramAndPalindrome.js
+ *  Purpose         : Convert input decimal number to binary form.
+ *  @file           : DecimalToBinary.js
  *  @author         : Shweta Bochare
  *  @version        : 1.0
  *  @since          : 12-09-2018
@@ -15,12 +15,22 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 var utility = require('../utility/Utility');
-rl.question('Enter a number to print prime numbers :',(range)=>
-{
-    //To check prime number that are palindrome.
-     utility.primeNumber(range);
 
-    //To check prime number that are anagram.
-    // utility.checkPrimeAnagram(range)
-    process.exit();
+rl.question('Enter a number :',(number)=>
+{
+    if(number > 0)
+    {
+        utility.decimalToBinary(number);
+        process.exit();
+    }
+    else{
+        console.log('Invalid Input..');
+        process.exit();
+    }
 });
+
+
+
+
+
+

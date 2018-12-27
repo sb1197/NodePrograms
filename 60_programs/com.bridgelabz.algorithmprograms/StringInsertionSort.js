@@ -1,6 +1,6 @@
 /*/**********************************************************************************
- *  Purpose         : Sorts the Integer array using Insertion Sort.
- *  @file           : IntegerInsertionSort.js
+ *  Purpose         : Sort an string array using Insertion Sort.
+ *  @file           : StringInsertionSort.js
  *  @author         : Shweta Bochare
  *  @version        : 1.0
  *  @since          : 12-09-2018
@@ -8,6 +8,7 @@
 /*
  *readline module provides an interface for reading data from a Readable stream one line 
 */
+
 
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -23,7 +24,7 @@ var utility = require('../utility/Utility');
 
 function arrayelements(size)
 {
-    var arr=[];
+    var array=[], result = [];
     var len=parseInt(size);
     console.log("Enter array elements:");//taking array elements from user
     recurrsion(len);
@@ -34,16 +35,14 @@ function arrayelements(size)
         {   
             rl.question('',function(i)
             {      
-                arr.push(parseInt(i));
+                array.push(i.toString());
                 len--;
                 recurrsion(len);      
             });
         }
         else
-        {
-            //rl.close();
-            
-            utility.insertionSortInt(arr,size);
+        {           
+            utility.insertionSortString(array,size);
             process.exit();
  
         }

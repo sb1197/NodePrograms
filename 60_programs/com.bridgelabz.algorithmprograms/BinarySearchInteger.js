@@ -1,3 +1,14 @@
+/*/**********************************************************************************
+ *  Purpose         : Search an Integer value using Binary Search. 
+ *  @file           : BinarySearchInteger.js
+ *  @author         : Shweta Bochare
+ *  @version        : 1.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+/*
+ *readline module provides an interface for reading data from a Readable stream one line 
+*/
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -29,9 +40,7 @@ function arrayelements(size)
             });
         }
         else
-        {
-            //rl.close();
-            
+        {            
             rl.question('Enter element to search :',(search)=>
             {
                 utility.binarySearchInteger(size,arr,search);

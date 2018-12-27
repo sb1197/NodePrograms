@@ -1,3 +1,14 @@
+/*/**********************************************************************************
+ *  Purpose         : Calculates the elapsed time using startTime and stopTime of StopWatch.
+ *  @file           : Stopwatch.js
+ *  @author         : Shweta Bochare
+ *  @version        : 1.0
+ *  @since          : 12-09-2018
+ **********************************************************************************/
+/*
+ *readline module provides an interface for reading data from a Readable stream one line 
+*/
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
