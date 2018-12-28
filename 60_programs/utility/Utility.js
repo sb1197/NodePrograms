@@ -1,6 +1,10 @@
 module.exports = {
 
-
+/**
+ * @purpose : To replace string with correct string.
+ * @description: Replaces the original string with proper name input by user.
+ * @param name is the user input string.
+ */
     replaceName(name)
     {
 		var n = name.length;
@@ -18,6 +22,12 @@ module.exports = {
    
 /*****************************************************************************/
 
+	/**
+	 * @purpose : 	To calculate percentage of heads and tails.
+	 * @description: This method takes user input n to flip the coin n number of times
+	 * 					and calculate the percentage of heads an tails.
+	 * @param n user input to flip the coins n number of times. 
+	 */
     flipCoin(n)
 	{
 		var heads = 0, tails=0,i;			
@@ -41,6 +51,11 @@ module.exports = {
         
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Check Leap Year.
+	 * @description: This method is to check the year input by user is leap year or not.
+	 * @param year User input year 
+	 */
 	checkLeapYear(year)
 	{
 		var isLeap = false;	 
@@ -65,6 +80,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : To calculate Power of two value
+	 * @description: This method is to calculate the power of two upto user input number.
+	 * @param number user input value 
+	 */
 	powerOf2(number)
 	{
 	   	var i = 0;                // count from 0 to N
@@ -80,6 +100,12 @@ module.exports = {
 	  
 /*****************************************************************************/
 
+	/**
+	 * @purpose : To calculate harmonic value of input number
+	 * @description: This method takes user input value to calculate the harmonic 
+	 * 					series upto given number and returns the sum of it.
+	 * @param number user input value 
+	 */
 	calculateHarmonicNumber(number)
 	{
 			var sum = 0;	
@@ -93,6 +119,11 @@ module.exports = {
 		
 /*****************************************************************************/
 
+	/**
+	 * @purpose : To calculate the Prime Factors
+	 * @description: This method is to calculate the Prime Factors of input number by user.
+	 * @param n user input 
+	 */
 	calculatePrimeFactors(n)
 	{
 			//find prime factors of a number
@@ -109,6 +140,12 @@ module.exports = {
 		
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Gambling Simulator to calculate the average of bets and percentage of game wins
+	 * @description: This method takes stake,goal,number of times to play and returns the 
+	 * 				average of bets and percentage of game wins.
+	 * @param name 
+	 */
 		gamblerSimulator(stake,goal,trials)
 		{
 				var bets = 0;        // total number of bets 
@@ -151,7 +188,11 @@ module.exports = {
 
 /*****************************************************************************/
 
-
+	/**
+	 * @purpose : Generates n distinct coupon numbers.
+	 * @description: This method takes a number value input and generates n 
+	 * 				distinct coupon numbers.
+	 */
 	couponGenerator() 
 	{
 		var coupon = '';		
@@ -165,6 +206,12 @@ module.exports = {
 
 	/*****************************************************************************/
 
+	/**
+	 * @purpose : Print 2D Integer array
+	 * @param arr array elements
+	 * @param start start index of array
+	 * @param size size of array  
+	 */
 	printIntegerArray(arr,start,size)
 	{
 		var util = require('util');
@@ -183,7 +230,12 @@ module.exports = {
 
 /*****************************************************************************/
 
-
+	/**
+	 * @purpose : Print 2D Double array
+	 * @param arr array elements
+	 * @param start start index of array
+	 * @param size size of array  
+	 */
 	printDoubleArray(arr,start,size)
 	{
 		var util = require('util');
@@ -202,6 +254,12 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Find all Triplets from an array
+	 * @description: This method takes array input from user and returns all triplets.
+	 * @param n is the size of array
+	 * @param array is the user input array 
+	 */
 	calculateTriplet(n,array)
 	{
 		console.log("array",array);
@@ -226,6 +284,13 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Calculate distance between origin and given point.
+	 * @description: Calculate distance between origin and input value of x and y 
+	 * 				co-ordinates of a point from user.
+	 * @param x1 x co-ordinate of a point
+	 * @param y1 y co-ordinate of a point 
+	 */
 	calculateDistance(x1,y1)
 	{
 		var distance;
@@ -241,6 +306,9 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : To get System Time.
+	 */
 	getTime()
 	{
 		var d = new Date();
@@ -250,6 +318,12 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Calculate elapsed time.
+	 * @description: This metod is to calculate the elapsed time taking start and stop time.
+	 * @param start system time  
+	 * @param stop system time  
+	 */
 	elapsedTime(start,stop)
 	{
 		var elapseTime = stop - start;	
@@ -258,6 +332,14 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Find roots of quadratic equation.
+	 * @description: This method takes value of a,b,c from user to calculate the roots of 
+	 * 					quadratic equation.
+	 * @param a user input value
+	 * @param b user input value
+	 * @param c user input value
+	 */
 		qudraticEquation(a,b,c)
 		{
 			var delta, root1, root2;
@@ -290,6 +372,13 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Calculate Windchill.
+	 * @description: This method takes temperature and wind speed value input from user and
+	 * 					returns calculated windchill.
+	 * @param t temperature value 
+	 * @param v wind speed value  
+	 */
 	calculateWindChill(t,v)
 	{
 		var windchill;
@@ -300,6 +389,13 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Check two strings are anagram or not.
+	 * @description: This method takes two input strings from user to check whether 
+	 * 					they are anagrams or not.
+	 * @param str1 first string 
+	 *  @param str2 second string 
+	 */
 	checkAnagram(str1,str2)
 	{
 			var m = str1.length;			
@@ -310,42 +406,39 @@ module.exports = {
 				var a = [];
 				a = str1.split("");
 				a.sort();
-				console.log('Char arrray a :',a);
+				//console.log('Char arrray a :',a);
 				
 				var b = [];
 				b = str2.split("");
 				b.sort();
-				console.log('Char arrray a :',b);
+				//console.log('Char arrray b :',b);
 				var flag = 0;
 				for(var i=0;i<a.length;i++)
 				{
-					if(a[i] == b[i])
+					if(a[i] === b[i])
 					{
-						flag = 1;						
+						return flag = 1;						
 					}
-					else
-					{
-						flag = 0;						
-					}
-				}
-				if(flag == 1)
-				{
-					console.log('Input Strings ',str1,' & ',str2,' are Anagram..');
-				}
-				else
-				{
-					console.log('Input Strings ',str1,' & ',str2,' are not Anagram..');
-				}
+					else					
+						return;						
+					
+				}	
 				
 			}
-			else
-			{
-				console.log('Input strings are of differnt length..');
-			}
+			// else
+			// {
+			// 	console.log('Input strings are of differnt length..');
+			// }
 	},
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Prints prime number in given range
+	 * @description: This method takes user input a number to print prime numbers 
+	 * 					upto the given range.
+	 * @param end range value 
+	 */
 	printPrimeNumberInRange(end)
 	{
 		var i,j,count=0;
@@ -370,6 +463,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Calculate prime numbers and pass it to check Anagrams
+	 * @description: This method pass the prime numbers to check the Anagrams.
+	 * @param n user input range 
+	 */
 	primeNumber(n)
 	{
 		var utility = require('../utility/Utility');
@@ -393,88 +491,66 @@ module.exports = {
 				if(i!=1 || i!=0)				//Number should not be 0 or 1
 				{
 					//console.log(i);	//Print the prime numbers						
-					utility.isPalindrome(i);
-					// intArray[k] = parseInt(i);
-					// k++;
+					//utility.isPalindrome(i);
+					intArray[k] = parseInt(i);
+					k++;
 				}
 			}
 		}
-		//utility.checkPrimeAnagram(intArray,k);
+		utility.checkPrimeAnagram(intArray,k);
 
 	},
 
 /*****************************************************************************/
-
-		checkPrimeAnagram(n)
-		{
-			var utility = require('../utility/Utility');
-			var flag = 0, k = 0,i, m = 0;
-			var intArray = [];
-			for(i=m;i<=n;i++)	//loop continue to given range
-			{
-				for(var j=2;j<i;j++)	// start checking prime no
-				{
-					if(i%j==0)		//check given number is prime or not
-					{
-						flag = 0;
-						break;
-					}
-					else
-						flag = 1;
-				}
-			
-				if(flag == 1)
-				{
-					if(i!=1 || i!=0)				//Number should not be 0 or 1
-					{
-						//System.out.print(i+" ");	//Print the prime numbers						
-						intArray[k] = i;		//scan the result into an integer array	
-						k++;						//scan until the last element
-					}
-				}
-			}
-			console.log("Anagrams are :");
-			utility.checkAnagram(intArray, k);				//calling the anagram method
-		},
-
-/*****************************************************************************/
-	checkAnagram(intArray, k)
+	
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
+	checkPrimeAnagram(intArray, k)
 	{
+		var str1 = "";
+		console.log("Anagrams are :");
+		var strArray,str1;
+		var br = [k];
+		var flag = 0;
+		var z = [];
+		for (let i = 0; i < k; i++)
+		{
+			strArray = intArray[i].toString();
+			z = strArray.toCharArray;
+			z.sort();
+			str1 = z.toString();
+			br[i] = str1;
+		}
+	
+		for(let m=0;m<=k;m++)
+		{
+			for(let p=m+1;p<k;p++)
+			{
+					if(br[m] === br[p])
+					{
+						console.log(intArray[m]+"----"+intArray[p]);
+						flag=1;
+					}
+			}
+		}
+		if(flag==0)
+		{
+			console.log("Exit");
+		}
 
-		console.log('Welcome..');
-			var strArray = "",str1 = "";
-			var br = [];
-			var flag = 0;
-			for (var i = 0; i < k; i++)
-			{
-				strArray = intArray[i].toString();
-				var z = [];
-				z = strArray.toCharArray;
-				z.sort();
-				str1 = z.charAt(0);
-				br[i] = str1;
-			}
-		
-			for(var m=0;m<=k;m++)
-			{
-				for(var p=m+1;p<k;p++)
-				{
-						if(br[m] === br[p])
-						{
-							console.log(intArray[m]+"----"+intArray[p]);
-							flag=1;
-						}
-				}
-			}
-			if(flag==0)
-			{
-				console.log("Exit");
-			}
 	},
 	
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Check number is Palindrome or not
+	 * @description: This method check if user input number is Palindrome or not
+	 * @param number uer input value 
+	 */
 	isPalindrome(number)
 	{
 		var numberToCheck = parseInt(number);
@@ -499,10 +575,11 @@ module.exports = {
 
 /*****************************************************************************/
 
-/**
- * 
- * @param {*} amount is user input cash
- */
+	/**
+	 * @purpose : Vending Machine to count the currency.
+	 * @description: This method is to count the number of notes in user input value
+	 * @param amount user input cash value 
+	 */
 	countCurrency(amount)
 	{
 		var notes = [2000, 500, 200, 100, 50, 20, 10, 5, 1]; 
@@ -531,6 +608,14 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Calculate Day of Week
+	 * @description: This method is used to calculate the day of week the 
+	 * 				user input date falls on.
+	 * @param day user input date 
+	 * @param month user input month
+	 * @param year user input year 
+	 */
 	dayOfWeek(day, month, year) 
 	{
 		var d = parseInt(day);
@@ -556,6 +641,13 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Convert the temperature.
+	 * @description: This method takes input temperature to convert it 
+	 * 					from celsius to fahrenheit or fahrenheit to celsius
+	 * @param temperature temperature value
+	 * @param choice user choice 
+	 */
 	convertTemp(temperature,choice)
 	{
 		
@@ -577,6 +669,15 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Calculate monthly payment
+	 * @description: This method takes amount, period, interest rate input from user 
+	 * 				to calculate the monthly payment.
+	 * @param loanAmount loan amount
+	 * @param termInYears period
+	 * @param interestRate rate of interest
+	 *  
+	 */
 	calculateMonthlyPay(loanAmount, termInYears, interestRate)
 	{       
 	    // Monthly interest rate    
@@ -594,6 +695,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Calculate square root.
+	 * @description: This method is to calculate the square root of given number
+	 * @param c number 
+	 */
 	calculateSquareRoot(c)
 	  {
 		  var epsilon = 1e-15;    
@@ -609,6 +715,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose : Binary Search on Integer array
+	 * @description: This method is to search an integer element using binary search method
+	 * @param name 
+	 */
 	binarySearchInteger(n,arr,number)
 	{	
 		var size = parseInt(n);
@@ -653,6 +764,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
 	insertionSortInt(arr, size)
 	{
 		var i , n = parseInt(size) ;
@@ -686,6 +802,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
 	bubbleIntSort(ar, size)
 	{
 		var i,j;
@@ -704,6 +825,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
 	binarySearchStr(n,arr,str)
 	{	
 		var size = parseInt(n);
@@ -748,6 +874,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
 	bubbleSortString(array, size)
 	{
 		var i,j;
@@ -766,6 +897,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
 	insertionSortString(arr, size)
 	{
 		var i , n = parseInt(size) ;
@@ -800,6 +936,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
 	strIterativePermutation(char_arr, i)
 	{	
 		var utility = require('../utility/Utility');
@@ -838,87 +979,57 @@ module.exports = {
 
 /*****************************************************************************/
 
-	mergeSort(arr,l,r) 
-	{ 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
+	mergeSort(arr) 
+	{
 		var utility = require('../utility/Utility');
-
-		if (l < r) 
-	    { 
-	        // Find the middle point 
-	        var m = Math.floor((l+r)/2); 
-	        // Sort first and second halves 
-	        utility.mergeSort(arr, l, m); 
-	        utility.mergeSort(arr , m+1, r); 
+		if (arr.length == 1) 
+		{
+		  // return once we hit an array with a single item
+		  return arr;
+		}
 	  
-			// Merge the sorted halves 
-	        utility.mergeStrArray(arr, l, m, r); 
-	    } 
-	}, 
-
-
-
-	mergeStrArray(arr, l, m, r) 
-	{ 
-	        // Find sizes of two subarrays to be merged 
-	        var n1 = m - l + 1; 
-	        var n2 = r - m; 
+		var middle = Math.floor(arr.length / 2) // get the middle item of the array rounded down
+		var left = arr.slice(0, middle) // items on the left side
+		var right = arr.slice(middle) // items on the right side
 	  
-	        /* Create temp arrays */
-	        var L = [n1]; 
-	        var R = [n2]; 
+		return utility.merge(utility.mergeSort(left),utility.mergeSort(right));
+	  },
 	  
-	        /*Copy data to temp arrays*/
-	        for (let i=0; i<n1; ++i) 
-	            L[i] = arr[l + i]; 
-	        for (let j=0; j<n2; ++j) 
-	            R[j] = arr[m + 1+ j]; 
-	  
-	  
-	        /* Merge the temp arrays */
-	  
-	        // Initial indexes of first and second subarrays 
-	        var i = 0, j = 0; 
-	  
-	        // Initial index of merged subarry array 
-	        var k = l; 
-	        while (i < n1 && j < n2) 
-	        { 
-	            if (L[i].compareTo(R[j])<=0) 
-	            { 
-	                arr[k] = L[i]; 
-	                i++; 
-	            } 
-	            else
-	            { 
-	                arr[k] = R[j]; 
-	                j++; 
-	            } 
-	            k++; 
-	        } 
-	  
-	        /* Copy remaining elements of L[] if any */
-	        while (i < n1) 
-	        { 
-	            arr[k] = L[i]; 
-	            i++; 
-	            k++; 
-	        } 
-	  
-	        /* Copy remaining elements of R[] if any */
-	        while (j < n2) 
-	        { 
-	            arr[k] = R[j]; 
-	            j++; 
-	            k++; 
-	        } 
-	} ,
-	  
-	    // Main function that sorts arr[l..r] using 
-	    // merge() 
-
-
+	  // compare the arrays item by item and return the concatenated result
+	   merge (left, right) 
+	   {
+			let result = []
+			let indexLeft = 0
+			let indexRight = 0
+		
+			while (indexLeft < left.length && indexRight < right.length) 
+			{
+				if (left[indexLeft] < right[indexRight])
+				{
+					result.push(left[indexLeft])
+					indexLeft++
+				}
+				else
+				{
+					result.push(right[indexRight])
+					indexRight++
+				}
+			}		
+			return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
+		},
+		  
 /*****************************************************************************/
 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
 	decimalToBinary(number)
 	{
 		var util = require('util');
@@ -946,6 +1057,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
 	binaryToDecimal(number)
 	{
 		var util = require('util');
@@ -987,52 +1103,55 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
 	yourNumber(arr)
 	{
 		var utility = require('../utility/Utility');
 		var low = 0;
 		var high = arr.length-1;
-		console.log('Low Value :',low);
-		console.log('High Value :',high);
+		// console.log('Low Value :',low);
+		// console.log('High Value :',high);
 		console.log("Think any number between "+low+" and "+ high);
 		utility.search(low, high);
 	},
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose :
+	 * @description:
+	 * @param name 
+	 */
 	search(low,high)
 	{
 		var utility = require('../utility/Utility');
-		const readline = require('readline');
-		const rl = readline.createInterface({
-			input: process.stdin,
-			output: process.stdout
-		  });
-
+		var read = require('readline-sync');
 		var mid=Math.floor((high+low)/2);
 		if(high==low)
 		{
-			console.log("your number is "+mid);
+			console.log("Your Number is "+mid);
 			process.exit();
 		}
 		console.log("\n Is it less than "+mid);
-		//console.log("Press 1 or 0");
-		rl.question('Press yes or no',(reply)=>
-		{
-			var answer = reply.toString();
-			console.log('User answer is:',answer);
+		var answer = read.question('Enter yes or no or equal  ');	
+			//console.log('User answer is:',answer);
 			if(answer === 'yes')
-			utility.search(low,mid-1);
-			else 
-			utility.search(mid+1, high);
-		});
+				utility.search(low,mid-1);
+			else if(answer === 'no')
+				utility.search(mid+1, high);
+			else if(answer === 'equal')
+			{
+				console.log('Your Number is :',mid);
+				process.exit();
+			}
 		
 	},
 
 /*****************************************************************************/
-
-
-
 
 
 

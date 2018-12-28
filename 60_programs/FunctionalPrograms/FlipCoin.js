@@ -25,3 +25,4 @@ rl.question('Please enter number of times to flip coin:',(number)=>{
         process.exit();
     }
 });
+
