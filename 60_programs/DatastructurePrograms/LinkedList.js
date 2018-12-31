@@ -30,12 +30,14 @@ class LinkedList
         // element and make it head 
         if (this.head == null) 
             this.head = node; 
-        else { 
+        else
+        { 
             current = this.head; 
     
             // iterate to the end of the 
             // list 
-            while (current.next) { 
+            while (current.next) 
+            { 
                 current = current.next; 
             } 
     
@@ -136,16 +138,6 @@ class LinkedList
 
     get(index)
 	{
-		// if(index >= listSize())
-		// {
-		// 	throw new IndexOutOfBoundsException();
-		// }
-		// var temp=head;
-		// for(let i=0;i<index;i++)
-		// {
-		// 	temp = temp.next;
-		// }
-        // return temp.data;
         var current = this.head; 
         var count = 0; /* index of Node we are 
                           currently looking at */
@@ -159,9 +151,12 @@ class LinkedList
 
 	}
 
+    deleteList() 
+    { 
+        return this.head = null; 
+    } 
 
-
-
+    
 
 
 

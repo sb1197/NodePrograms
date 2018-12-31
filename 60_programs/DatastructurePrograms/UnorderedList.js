@@ -1,3 +1,12 @@
+/*/**********************************************************************************
+ *  Purpose         : Unordered list of strings read from a file to search a word 
+ *                      using Linked List.
+ *  @file           : UnorderedList.js
+ *  @author         : Shweta Bochare
+ *  @version        : 1.0
+ *  @since          : 30-12-2018
+ **********************************************************************************/
+
 const linked = require('../DatastructurePrograms/LinkedList');
 var list = new linked.LinkedList;
 var utility = require('../utility/Utility');
@@ -27,7 +36,7 @@ console.log('Linked List elements are :');
  else
  {
     list.add(searchString);
-    console.log('Updated Linked List is:');
+    //console.log('Updated Linked List is:');
     var outputArray = [];
    // list.printList();
     var str = "";
@@ -36,10 +45,10 @@ console.log('Linked List elements are :');
         str = list.get(index);
         outputArray.push(str);
     }
-    console.log('OutputArray is:');
-    for(let index=0;index<outputArray.length;index++)
-    {
-        console.log(outputArray[index]);
-    }
-    utility.writeAllToFile(outputArray);
+    // console.log('OutputArray is:');
+    // for(let index=0;index<outputArray.length;index++)
+    // {
+    //     console.log(outputArray[index]);
+    // }
+    utility.writeAllToFile('../DatastructurePrograms/UnorderedOutput.txt',outputArray);
  }

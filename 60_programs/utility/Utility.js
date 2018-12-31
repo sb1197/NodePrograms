@@ -1167,39 +1167,136 @@ module.exports = {
 
 /*****************************************************************************/
 
-readAllFromFile(filename)
-{
-	const fileStream = require('fs');
-	var file = fileStream.readFileSync(filename,'utf8');
-	// console.log('Reading File :')
-	// console.log(file);
-	var fileToArray = [];
-	fileToArray = file.split(" ",file.length);
-	return fileToArray;
-},
+	readAllFromFile(filename)
+	{
+		const fileStream = require('fs');
+		var file = fileStream.readFileSync(filename,'utf8');
+		// console.log('Reading File :')
+		// console.log(file);
+		var fileToArray = [];
+		fileToArray = file.split(" ",file.length);
+		return fileToArray;
+	},
 
 /*****************************************************************************/
 
-writeAllToFile(array)
-{
-	const fileStream = require('fs');
-//	const file = require('../DatastructurePrograms');
-	var arrToString = array.toString();
-	fileStream.writeFile('../DatastructurePrograms/UnorderedOutput.txt',arrToString,(err) =>
-	 {  
-		// throws an error, you could also catch it here
-		if (err) throw err;
-	
-		// success case, the file was saved
-		console.log('File saved!');
-	});
-}
+	writeAllToFile(filename,array)
+	{
+		const fileStream = require('fs');
+	//	const file = require('../DatastructurePrograms');
+		var arrToString = array.toString();
+		fileStream.writeFile(filename,arrToString,(err) =>
+		{  
+			// throws an error, you could also catch it here
+			if (err) throw err;
+		
+			// success case, the file was saved
+			console.log('File saved!');
+		});
+	},
 
+/*****************************************************************************/
 
+	checkBalancedParantheses(expression)
+	{
+		const stackUsingLinked = require('../DatastructurePrograms/Stack');
+		var list = new stackUsingLinked.Stack;
+		var char_array = [];
+		var str = "";
+		var x = 0, y = 0;
+		for(let i = 0;i<expression.length;i++)
+		{
+			char_array.push(expression.charAt(i.toString()));
+		}
+		for(let z=0;z<char_array.length;z++)
+		{
+			str = char_array[z.toString()];
+			if( str === '{' || str === '[' || str === '(' )
+			{
+				list.push(str.toString());
+				x++;
+			}
+			else if(str === '}' || str === ']' || str === ')')
+			{
+				list.pop();
+				y++;
+			}
+			//console.log(char_array[z]);
+		} 
+		// console.log('Stack elements are :')
+		// list.display();
 
+		// console.log('Char_array is :')
+		// for(let z=0;z<char_array.length;z++)
+		// {
+		//     console.log(char_array[z]);
+		// }
+		if(x == y)
+		{	
+			return true;
+		}  
+		else
+		{
+			return false;
+		}
+	},
 
+/*****************************************************************************/
 
+	bankingCounter(numberOfPerson)
+	{
+		const queueUsingLinked = require('../DatastructurePrograms/Queue');
+		var queue = new queueUsingLinked.Queue;
+		var read = require('readline-sync');
+		var amount=0 , totalBalance = 1000;
+		if(numberOfPerson>0)
+		{
+			for(let index = 0; index < numberOfPerson; index++)
+			{
+				queue.enqueue(index);
+				//queue.print();
+			}
+		}
+		else
+		{
+			//console.log('Number of person is zero..');
+			//process.exit();
+		
+			if(queue.isEmpty())
+			{
+				console.log('No persons are left in Queue..');
+				process.exit();
+			}
+			else
+			{
+				while(!queue.isEmpty())
+				{
+					console.log('1. Deposit Amount. \n2. Withdraw Amount.');
+					console.log('Press 1 To deposit_Amount \nPress 2 To withdraw_Amount');
+					var choice = read.question('Enter your choice :');
+					if(choice == 1)
+					{
+						amount = read.question('Enter amount to deposit :');
+						totalBalance = totalBalance + parseInt(amount);
+						console.log('Total amount after deposit :',totalBalance);
+					}
+					else if(choice == 2)
+					{
+						amount = read.question('Enter amount to withdraw :');
+						totalBalance = totalBalance - parseInt(amount);
+						console.log('Total amount after withdraw :',totalBalance);
+					}
+					//numberOfPerson--;
+					queue.dequeue();
+					//queue.print();
+				}
 
+			}
+		}
+		
+	},
+
+/*****************************************************************************/
 
 
 
