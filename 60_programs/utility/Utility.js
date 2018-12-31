@@ -718,7 +718,9 @@ module.exports = {
 	/**
 	 * @purpose : Binary Search on Integer array
 	 * @description: This method is to search an integer element using binary search method
-	 * @param name 
+	 * @param n size of array
+	 * @param arr array elements
+	 * @param number number to search 
 	 */
 	binarySearchInteger(n,arr,number)
 	{	
@@ -765,9 +767,10 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Insertion Sort on Integer array
+	 * @description: This method is to sort the integer array using Insertion Sort
+	 * @param arr Integer array
+	 * @param size is the size of array
 	 */
 	insertionSortInt(arr, size)
 	{
@@ -803,9 +806,10 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Bubble Sort on Integer array
+	 * @description: This method is to sort the integer array using Bubble Sort
+	 * @param ar is an integer array
+	 * @param size is the size of an array. 
 	 */
 	bubbleIntSort(ar, size)
 	{
@@ -826,9 +830,11 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Binary Search on String array
+	 * @description: This method is to search a string from string array
+	 * @param n is size of string array
+	 * @param arr is String array
+	 * @param str is the string to search
 	 */
 	binarySearchStr(n,arr,str)
 	{	
@@ -875,9 +881,10 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Bubble Sort on String array
+	 * @description: This method is to sort the String array using Bubble Sort
+	 * @param array is String array
+	 * @param size is the length of String array
 	 */
 	bubbleSortString(array, size)
 	{
@@ -898,9 +905,10 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Insertion Sort on String array
+	 * @description: This method is to sort the String array using Insertion Sort
+	 * @param arr is String array
+	 * @param size is the length of String array
 	 */
 	insertionSortString(arr, size)
 	{
@@ -937,9 +945,11 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Print all permutation of String
+	 * @description: This method takes a string input and returns all 
+	 * 					the permutation of that string
+	 * @param char_arr is the converted character array of input string
+	 * @param i is the strating index of character array 
 	 */
 	strIterativePermutation(char_arr, i)
 	{	
@@ -980,9 +990,9 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Merge Sort on string array
+	 * @description: This method returns the sorted elements of string array using Merge Sort.
+	 * @param arr is the string array 
 	 */
 	mergeSort(arr) 
 	{
@@ -1000,6 +1010,7 @@ module.exports = {
 		return utility.merge(utility.mergeSort(left),utility.mergeSort(right));
 	  },
 	  
+
 	  // compare the arrays item by item and return the concatenated result
 	   merge (left, right) 
 	   {
@@ -1026,9 +1037,10 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Decimal To Binary Conversion
+	 * @description: This method takes input decimal integer from user and returns 
+	 * 					the binary conversion of that number 
+	 * @param number is the decimal integer 
 	 */
 	decimalToBinary(number)
 	{
@@ -1058,9 +1070,10 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Binary Nibble Swap to Converted binary to decimal number
+	 * @description: This method convert input decimal number to binary then 
+	 * 					swap the nibbles to create new decimal number
+	 * @param number decimal integer input 
 	 */
 	binaryToDecimal(number)
 	{
@@ -1104,9 +1117,10 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Guess a number
+	 * @description: This method is to guess a number game in which we 
+	 * 				search a number guess by user using binary search
+	 * @param arr is the array elements 
 	 */
 	yourNumber(arr)
 	{
@@ -1122,9 +1136,9 @@ module.exports = {
 /*****************************************************************************/
 
 	/**
-	 * @purpose :
-	 * @description:
-	 * @param name 
+	 * @purpose : Search a number from array
+	 * @param low is the low value
+	 * @param high is the high value 
 	 */
 	search(low,high)
 	{
@@ -1153,9 +1167,33 @@ module.exports = {
 
 /*****************************************************************************/
 
+readAllFromFile(filename)
+{
+	const fileStream = require('fs');
+	var file = fileStream.readFileSync(filename,'utf8');
+	// console.log('Reading File :')
+	// console.log(file);
+	var fileToArray = [];
+	fileToArray = file.split(" ",file.length);
+	return fileToArray;
+},
 
+/*****************************************************************************/
 
-
+writeAllToFile(array)
+{
+	const fileStream = require('fs');
+//	const file = require('../DatastructurePrograms');
+	var arrToString = array.toString();
+	fileStream.writeFile('../DatastructurePrograms/UnorderedOutput.txt',arrToString,(err) =>
+	 {  
+		// throws an error, you could also catch it here
+		if (err) throw err;
+	
+		// success case, the file was saved
+		console.log('File saved!');
+	});
+}
 
 
 
