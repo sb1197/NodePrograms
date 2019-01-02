@@ -621,6 +621,9 @@ module.exports = {
 		var d = parseInt(day);
 		var m = parseInt(month);
 		var y = parseInt(year);
+		//  console.log('Day :',d);
+		//  console.log('Month :',m);
+		//  console.log('Year :',y);
 		 
 		// Calculate day of week by taking date input from user.
 		var y0 = y - Math.floor((14 - m) / 12);
@@ -634,7 +637,7 @@ module.exports = {
 //		  System.out.println(y0);
 //		  System.out.println(x);
 //		  System.out.println(m0);
-//		  System.out.println(d0);
+		  //console.log('d0 =',d0);
 		
 		return d0;
 	},
@@ -1298,13 +1301,85 @@ module.exports = {
 
 /*****************************************************************************/
 
+	checkPalindromeInDeque(str1,str2)
+	{
+		if(str1 === str2)
+		{
+			console.log('Input string is Palindrome..');
+			process.exit();
+		}
+		else
+		{
+			console.log('Input string is not Palindrome..');
+			process.exit();
+		}  
+	
+	},
 
+/*****************************************************************************/
 
+	factorial(n) 
+	{ 
+		var res = 1; 
+	
+		// Calculate value of  
+		// [1*(2)*---*(n-k+1)] /  
+		// [k*(k-1)*---*1] 
+		for (let i = 1; i <= n; ++i) 
+		{ 
+			res *= i; 
+		} 
+	
+		return res; 
+	} ,
+	
 
+/*****************************************************************************/
 
+	binomialCoeff( n, k) 
+	{ 
+		var res = 1; 
+	
+		// Since C(n, k) = C(n, n-k) 
+		if (k > n - k) 
+			k = n - k; 
+	
+		// Calculate value of [n*(n-1)*---*(n-k+1)] / [k*(k-1)*---*1] 
+		for (let i = 0; i < k; ++i) 
+		{ 
+			res *= (n - i); 
+			res = res / (i + 1); 
+		} 
+	
+		return res; 
+	},
+  
+  
+	// A Binomial coefficient based function to find nth catalan number  
+	
+	catalan(n) 
+	{ 
+		var utility = require('../utility/Utility');
+		// Calculate value of 2nCn 
+		var c = utility.binomialCoeff(2 * n, n); 
+	
+		// return 2nCn/(n+1) 
+		return c / (n + 1); 
+	} ,
+  
+	// A function to count number of BST with n nodes using catalan 
+	countBST(number) 
+	{ 
+		var utility = require('../utility/Utility');
+		var n = parseInt(number);
+		// find nth catalan number 
+		var count = utility.catalan(n); 
+	
+		// return nth catalan number 
+		return count; 
+	} ,
 
-
-
+/*****************************************************************************/
 
 
 

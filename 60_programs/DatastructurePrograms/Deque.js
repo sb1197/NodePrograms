@@ -16,6 +16,7 @@ class Deque
     {
         this.head = null;
         this.tail = null;
+        this.size = 0;
     }
    
     enqueue(data)
@@ -30,6 +31,7 @@ class Deque
             this.tail.next = newNode;
             this.tail = newNode;
         }
+        this.size++;
     }
     removeFirstNode() 
     {
@@ -52,14 +54,17 @@ class Deque
     
     removeLastNode()
     {
-        if (this.head == null) 
+        if(this.head == null)
         {
-            throw new IllegalStateException();
+            return 0;
         }
         if (this.head == this.tail)
         {
+            var temp=this.head.data;
             this.head = null;
-            this.tail = null;
+            
+             return temp;
+             
         } 
         else 
         {
@@ -71,10 +76,17 @@ class Deque
             var temp = current.next.data;
             current.next = null;
             this.tail = current;
+           // console.log('Temp :',temp);
+            return temp;
         }
-        return temp;
+        
+      
     }
 
+    Size()
+    {
+        return this.size;
+    }
 
     isEmpty()
     {
@@ -91,17 +103,17 @@ module.exports = {
 
 // var deque = new Deque();
 
-//     deque.enqueue(10);
-//     deque.enqueue(20);
-//     deque.enqueue(30);
-//     deque.enqueue(40);
+//     deque.enqueue('a');
+//     deque.enqueue('b');
+//     deque.enqueue('c');
+//     deque.enqueue('d');
 
 //     deque.print();
 
-//     console.log('Deleted first node :')
-//     var x = deque.removeFirstNode();
-//     console.log('First node :',x);
-//     deque.print();
+// // //     // console.log('Deleted first node :')
+// // //     // var x = deque.removeFirstNode();
+// // //     // console.log('First node :',x);
+// // //     // deque.print();
 //     console.log('Deleted last node :')
 //     var y = deque.removeLastNode();
 //     console.log('Last node :',y)

@@ -43,11 +43,12 @@ class Queue
     print() 
     {
         var curr = this.head;
-        while (curr) 
+        while (curr != null) 
         {
-            console.log(curr.data);
+            var tmp = curr.data;
             curr = curr.next;
         }
+        return tmp;
     }
 
     isEmpty()
@@ -63,15 +64,15 @@ module.exports = {
 
 
 
-var queue = new Queue();
-for(let i=0;i<5;i++)
-{
-    queue.enqueue(i);
-}
+// var queue = new Queue();
+// for(let i=0;i<5;i++)
+// {
+//     queue.enqueue(i);
+// }
 
 
-while(!queue.isEmpty())
-{
-    queue.dequeue();
-    queue.print();
-}
+// while(!queue.isEmpty())
+// {
+//     queue.dequeue();
+//     queue.print();
+// }
