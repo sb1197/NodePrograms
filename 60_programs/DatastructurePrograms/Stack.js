@@ -27,11 +27,11 @@ class Stack
   
         // check if stack (heap) is full. Then inserting an 
         //  element would lead to stack overflow 
-        if (temp == null) 
-        { 
-            console.log("\nStack Overflow"); 
-            return; 
-        } 
+        // if (temp == null) 
+        // { 
+        //     console.log("\nStack Overflow"); 
+        //     return; 
+        // } 
   
         // initialize data into temp data field 
         temp.data = x; 
@@ -80,6 +80,7 @@ class Stack
   
     display() 
     { 
+        var util = require('util');  
         // check for stack underflow 
         if (this.top == null) 
         { 
@@ -93,13 +94,43 @@ class Stack
             { 
   
                 // print node data 
-                console.log(temp.data); 
+               // console.log(temp.data); 
+               util.print(temp.data+" ");
   
                 // assign temp link to temp 
                 temp = temp.link; 
             } 
         } 
-    } 
+    }
+    
+    displayCalender(d)
+	{
+		var show = require('util');
+		var t = this.top;	
+		var count = 0;
+
+		// while(t.data == " ")
+		// {
+		// 	show.print(" ");
+		// 	t = t.next;
+		// }
+		while(t!=null)
+		{   
+			count++;
+			show.print("  ", t.data);
+			if(t.data < 10)
+			{
+				show.print(" ");
+			}
+		
+			if (((count + d) % 7 == 0) )
+			{
+				console.log("");
+			}
+			t = t.link;
+		}
+		count = 0;
+	}
 } 
 
 module.exports = 
