@@ -8,15 +8,10 @@
 /*
  *readline module provides an interface for reading data from a Readable stream one line 
 */
-
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
+var rl = require('readline-sync');
 var utility = require('../utility/Utility'); 
     
-        rl.question('Please enter number :',(number)=>{
+var number = rl.question('Please enter number :');
             if(number>0)
             {
                 var harmonicNum = utility.calculateHarmonicNumber(number);
@@ -28,7 +23,7 @@ var utility = require('../utility/Utility');
                 console.log('Please Enter valid number..');
                 process.exit();
             }
-        });
+        
 
 
 

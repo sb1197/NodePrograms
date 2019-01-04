@@ -1,3 +1,11 @@
+/*/**********************************************************************************
+ *  Purpose         : Print Calendar using Stack.
+ *  @file           : CalendarStack.js
+ *  @author         : Shweta Bochare
+ *  @version        : 1.0
+ *  @since          : 31-12-2018
+ **********************************************************************************/
+
 const stackUsingLinked = require('../DatastructurePrograms/Stack');
 var stack = new stackUsingLinked.Stack;
 var stack1 = new stackUsingLinked.Stack;

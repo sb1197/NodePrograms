@@ -1,3 +1,11 @@
+/*/**********************************************************************************
+ *  Purpose         : Print Calendar using Queue.
+ *  @file           : CalendarQueue.js
+ *  @author         : Shweta Bochare
+ *  @version        : 1.0
+ *  @since          : 31-12-2018
+ **********************************************************************************/
+
 const queueUsingLinked = require('../DatastructurePrograms/Queue');
 var queue = new queueUsingLinked.Queue;
 var queue1 = new queueUsingLinked.Queue;

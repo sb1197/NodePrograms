@@ -1169,7 +1169,10 @@ module.exports = {
 	},
 
 /*****************************************************************************/
-
+	/**
+	 * @purpose Read all the contents from file
+	 * @param filename is file name to read data
+	 */
 	readAllFromFile(filename)
 	{
 		const fileStream = require('fs');
@@ -1183,6 +1186,11 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose To write all the contents of array into the Output File
+	 * @param filename is name of file
+	 * @param array is an array to write into file
+	 */
 	writeAllToFile(filename,array)
 	{
 		const fileStream = require('fs');
@@ -1200,6 +1208,10 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose To check input expression has balanced parantheses or not
+	 * @param expression is an userInput expression 
+	 */
 	checkBalancedParantheses(expression)
 	{
 		const stackUsingLinked = require('../DatastructurePrograms/Stack');
@@ -1246,24 +1258,24 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose To execute the banking trasaction of persons in queue using Queue.
+	 * @param numberOfPerson is count of perons in queue
+	 */
 	bankingCounter(numberOfPerson)
 	{
 		const queueUsingLinked = require('../DatastructurePrograms/Queue');
 		var queue = new queueUsingLinked.Queue;
 		var read = require('readline-sync');
 		var amount=0 , totalBalance = 1000;
-		if(numberOfPerson>0)
-		{
+		console.log('no person',numberOfPerson);
+		
+		
 			for(let index = 0; index < numberOfPerson; index++)
 			{
 				queue.enqueue(index);
-				//queue.print();
+				//queue.display();
 			}
-		}
-		else
-		{
-			//console.log('Number of person is zero..');
-			//process.exit();
 		
 			if(queue.isEmpty())
 			{
@@ -1295,12 +1307,17 @@ module.exports = {
 				}
 
 			}
-		}
+		
 		
 	},
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose To check if two strings are palindrome or not using Deque
+	 * @param str1 first string
+	 * @param str2 second string
+	 */
 	checkPalindromeInDeque(str1,str2)
 	{
 		if(str1 === str2)
@@ -1318,6 +1335,10 @@ module.exports = {
 
 /*****************************************************************************/
 
+	/**
+	 * @purpose Calculate factorial of number
+	 * @param n user Input value
+	 */
 	factorial(n) 
 	{ 
 		var res = 1; 
@@ -1336,7 +1357,8 @@ module.exports = {
 
 /*****************************************************************************/
 
-	binomialCoeff( n, k) 
+	// A function to calculate binomial coefficient value of (2 * n, n) 
+	binomialCoeff(n, k) 
 	{ 
 		var res = 1; 
 	
@@ -1367,7 +1389,11 @@ module.exports = {
 		return c / (n + 1); 
 	} ,
   
-	// A function to count number of BST with n nodes using catalan 
+	/**
+	 * @purpose A function to count number of BST with n nodes using catalan 
+	 * @param number is user input number 
+	 */ 
+	
 	countBST(number) 
 	{ 
 		var utility = require('../utility/Utility');
@@ -1381,7 +1407,147 @@ module.exports = {
 
 /*****************************************************************************/
 
-	
+
+	/**
+	 * @purpose To find prime numbers within given range 
+	 * @param s1 starting value
+	 * @param s2 ending value
+	 */
+	findPrime(s1, s2) 
+	{
+		var count = 0, flag = 0, k = 0;
+		var prime = [];
+
+		for (var i = s1; i <= s2; i++)
+		{
+			for (var j = 2; j < i; j++) 
+			{
+				if (i % j == 0) 
+				{
+					flag = 0;
+					count++;
+					break;
+				}
+				else 
+				{
+					flag = 1;
+				}
+			}
+			if (flag == 1)
+			{
+				prime[k++] = i;
+			}
+		}
+		return prime;
+	},
+
+/*****************************************************************************/
+
+	/**
+	 * @purpose To print prime Anagram within given range
+	 * @param ii starting value
+	 * @param jj ending value
+	 */
+	findAnaPrime(ii, jj) 
+	{
+		var primes = this.findPrime(ii, jj);
+		var n = primes.length;
+		var anaPrimes = [];
+		var h = 0;
+
+		for (let i = 0; i < primes.length - 1; i++) 
+		{
+			for (let j = i + 1; j < primes.length - 1; j++) 
+			{
+				if (this.checkAnagram2(primes[i], primes[j])) 
+				{
+					anaPrimes[h++] = primes[i];
+					anaPrimes[h++] = primes[j];
+				}
+
+			}
+		}
+		return anaPrimes;
+	},
+
+/*****************************************************************************/
+
+	/**
+	 * @purpose To check if two strings are anagram or not
+	 * @param str1 first string 
+	 * @param str2 second string
+	 */
+	checkAnagram2(str1, str2) 
+	{
+		let unsortedStr1 = "" + str1;
+		let unsortedStr2 = "" + str2;
+		if (unsortedStr1.length != unsortedStr2.length)
+		{
+			return false;
+		}
+		sortedStr1 = this.sort1(unsortedStr1);
+		sortedStr2 = this.sort1(unsortedStr2);
+		let b = this.check(sortedStr1, sortedStr2);
+
+		if (b == true) 
+		{
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+	},
+
+/*****************************************************************************/
+
+	/**
+	 * @purpose Convert input string to character_array and sort it.
+	 * @param str input String
+	 */
+	sort1(str) 
+	{
+		let ch = str.split('');
+		for (let i = 0; i < str.length; i++) 
+		{
+			for (let j = i + 1; j < str.length; j++) 
+			{
+				if (ch[i] > ch[j]) 
+				{
+					let t = ch[i];
+					ch[i] = ch[j];
+					ch[j] = t;
+				}
+			}
+		}
+		var sortedStr = "";
+
+		for (let i = 0; i < ch.length; i++) 
+		{
+			sortedStr += ch[i];
+		}
+		return sortedStr;
+	},
+
+/*****************************************************************************/
+
+	/**
+	 * @purpose Check each character of both char_array
+	 * @param s1 char_array 1
+	 * @param s2 char_array 2
+	 */
+	check(s1, s2) 
+	{
+		for (let i = 0; i < s1.length; i++) 
+		{
+			if (s1.charAt(i) != s2.charAt(i)) 
+			{
+				return false;
+			}
+		}
+		return true;
+	},
+
 
 /*****************************************************************************/
 

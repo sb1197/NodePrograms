@@ -27,11 +27,11 @@ class Stack
   
         // check if stack (heap) is full. Then inserting an 
         //  element would lead to stack overflow 
-        // if (temp == null) 
-        // { 
-        //     console.log("\nStack Overflow"); 
-        //     return; 
-        // } 
+        if (temp == null) 
+        { 
+            console.log("\nStack Overflow"); 
+            return; 
+        } 
   
         // initialize data into temp data field 
         temp.data = x; 

@@ -53,6 +53,18 @@ class Queue
         return week;
     }
 
+    display() 
+    {
+        
+        var curr = this.head;
+        while (curr) 
+        {
+            console.log(curr.data);
+            
+            curr = curr.next;
+        }
+        
+    }
     isEmpty()
     {
         return this.head == null;
@@ -102,6 +114,20 @@ class Queue
       //  console.log();
     }
 
+    displayReverse(head) {
+        var show = require('util');
+        if (head == null)
+            return;
+    
+        this.displayReverse(head.next);
+        show.print(head.data);
+        if (head.next != head)
+            show.print("-->");
+    
+    }
+    getHead() {
+        return this.head;
+    }
 
 
 }
@@ -114,12 +140,10 @@ module.exports = {
 
 
 // var queue = new Queue();
-// for(let i=0;i<5;i++)
-// {
-//     queue.enqueue(i);
-// }
-
-
+//   queue.enqueue(10);
+//   queue.enqueue(20);
+//   queue.enqueue(30);
+//   queue.display();
 // while(!queue.isEmpty())
 // {
 //     queue.dequeue();
