@@ -18,9 +18,8 @@ var utility = require('../utility/Utility');
 rl.question('Enter a number to print prime numbers :',(range)=>
 {
     //To check prime number that are palindrome.
-    // utility.primeNumber(range);
-
+    utility.primeNumber(range);
     //To check prime number that are anagram.
-     utility.primeNumber(range);
+    utility.primeNumber(range);
     process.exit();
 });

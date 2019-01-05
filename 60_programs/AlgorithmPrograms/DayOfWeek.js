@@ -15,7 +15,6 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 var utility = require('../utility/Utility');
-
 rl.question('Enter day :',(day)=>
 {
     rl.question('Enter month :',(month)=>

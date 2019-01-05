@@ -21,14 +21,11 @@ rl.question('Enter the size of array :', (size) => {
     addNumber(size);
 
 });
-
 function addNumber(size)
 {
     var array = [];
     var len = parseInt(size);
     sum(len);
-
-
     function sum(len) 
     {
         if (len > 0) 
@@ -37,11 +34,7 @@ function addNumber(size)
             {
                 array.push(parseInt(value));
                 len--;
-                // console.log(array);
-
                 sum(len);
-
-
             });
         }
         else 
@@ -49,10 +42,7 @@ function addNumber(size)
             utility.calculateTriplet(size, array);
             process.exit();
         }
-
     }
-
-
 }
 
 

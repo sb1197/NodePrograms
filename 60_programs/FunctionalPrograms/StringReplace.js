@@ -14,7 +14,6 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 var utility = require('../utility/Utility');
-
-    rl.question("Please enter your name:",(name)=>{
-        utility.replaceName(name);
-    });
+rl.question("Please enter your name:",(name)=>{
+  utility.replaceName(name);
+});

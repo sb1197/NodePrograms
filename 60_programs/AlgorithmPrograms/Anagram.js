@@ -8,27 +8,17 @@
 /*
  *readline module provides an interface for reading data from a Readable stream one line 
 */
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
+var rl = require('readline-sync');
 var utility = require('../utility/Utility');
-
-
-rl.question('Enter first string :',(s1)=>
+var s1 = rl.question('Enter first string :');
+var s2 = rl.question('Enter second string :');
+var status = utility.checkAnagram(s1,s2);
+if(status == 1)
 {
-    rl.question('Enter second string :',(s2)=>
-    {
-       var status = utility.checkAnagram(s1,s2);
-       if(status == 1)
-				{
-					console.log('Input Strings ',s1,' & ',s2,' are Anagram..');
-				}
-				else
-				{
-					console.log('Input Strings ',s1,' & ',s2,' are not Anagram..');
-				}
-        process.exit();
-    });
-});
+    console.log('Input Strings ',s1,' & ',s2,' are Anagram..');
+}
+else
+{
+	console.log('Input Strings ',s1,' & ',s2,' are not Anagram..');
+}
+process.exit();

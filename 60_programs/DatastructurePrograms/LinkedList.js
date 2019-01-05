@@ -54,7 +54,7 @@ class LinkedList
         var str = ""; 
         while (curr) 
         { 
-            str += curr.data + " "; 
+            str += curr.data + "-->"; 
             curr = curr.next; 
         } 
         console.log(str); 

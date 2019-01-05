@@ -15,7 +15,6 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 var utility = require('../utility/Utility'); 
-
 rl.question('Please enter number :',(number)=>{
     if(number>0)
     {

@@ -12,15 +12,15 @@
 var rl = require('readline-sync');
 var utility = require('../utility/Utility');
 var number = rl.question('Please enter number of times to flip coin:');
-    if(number>0)
-    {
-        utility.flipCoin(number);
-        process.exit();
-    }
-    else
-    {
-        console.log('Please Enter positive number..');
-        process.exit();
-    }
+if(number>0)
+{
+    utility.flipCoin(number);
+    process.exit();
+}
+else
+{
+    console.log('Please Enter positive number..');
+    process.exit();
+}
 
 

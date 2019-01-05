@@ -15,17 +15,14 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 var utility = require('../utility/Utility');
-
 rl.question('Enter a string :',(string)=>
 { 
    var str = string.toString();
-   //console.log('string is :',str);
    var arr = [];
    for(let i = 0;i<str.length;i++)
    {
        arr.push(str.charAt(i.toString()));
-   }
-   
+   } 
     utility.strIterativePermutation(arr,0);
     process.exit();
 });

@@ -15,13 +15,11 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 var utility = require('../utility/Utility');
-
 rl.question('Enter the amount :',(amount)=>
 {
     if(amount > 0)
     {
-        utility.countCurrency(amount);
-       
+        utility.countCurrency(amount);    
     }
     else
     {

@@ -15,24 +15,20 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 var utility = require('../utility/Utility');
-
 var fileStream = require('fs');
 var file = fileStream.readFileSync('words.txt','utf8');
-//console.log('Reading File :')
+console.log('Reading File :')
 console.log(file);
-
 var wordArray = [];
 wordArray = file.split(" ",file.length);
-
 console.log('Words from file in array are :')
-  for(var i = 0; i < wordArray.length;i++)
-    {
-        console.log(wordArray[i]);
-    }
-
-    rl.question('Enter a word to search from list :',(search)=>
-    {
-        var string = search.toString();
-        utility.binarySearchStr(wordArray.length,wordArray,string);
-        process.exit();
-    });
+for(var i = 0; i < wordArray.length;i++)
+{
+    console.log(wordArray[i]);
+}
+rl.question('Enter a word to search from list :',(search)=>
+{
+    var string = search.toString();
+    utility.binarySearchStr(wordArray.length,wordArray,string);
+    process.exit();
+});

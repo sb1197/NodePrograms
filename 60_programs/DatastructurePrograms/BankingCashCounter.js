@@ -8,6 +8,5 @@
 
 var utility = require('../utility/Utility');
 var read = require('readline-sync');
-
 var numberOfPerson = read.question('How many persons are in queue ? ');
 utility.bankingCounter(parseInt(numberOfPerson));

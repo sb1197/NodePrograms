@@ -15,7 +15,6 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 var utility = require('../utility/Utility'); 
-
 rl.question('Enter the value of a:',(a)=>
 {
     rl.question('Enter the value of b:',(b)=>

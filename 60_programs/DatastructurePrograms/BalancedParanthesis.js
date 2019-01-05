@@ -6,10 +6,8 @@
  *  @since          : 31-12-2018
  **********************************************************************************/
 
-
 var utility = require('../utility/Utility');
 var read = require('readline-sync');
-
 var expression = read.question('Enter an expression : ');
 console.log('Input Expression is : ',expression);
 var status = utility.checkBalancedParantheses(expression);

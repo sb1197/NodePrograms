@@ -15,12 +15,10 @@ const rl = readline.createInterface({
     output: process.stdout
   });
 var utility = require('../utility/Utility');
-
 rl.question('To start the watch press 1:',(x)=>
 {
     var start = utility.getTime();
     console.log('Start time :',start);
-
     rl.question('To stop the watch press 0:',(x)=>
     {
         var end = utility.getTime();

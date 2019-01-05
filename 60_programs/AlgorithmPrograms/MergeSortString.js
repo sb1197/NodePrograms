@@ -8,7 +8,6 @@
 /*
  *readline module provides an interface for reading data from a Readable stream one line 
 */
-
 var utility = require('../utility/Utility');
 var read = require('readline-sync');
 var array = [];

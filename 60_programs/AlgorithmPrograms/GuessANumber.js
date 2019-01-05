@@ -10,14 +10,11 @@
 */
 var utility = require('../utility/Utility');
 var read = require('readline-sync');
-
-    var number = read.question('Enter a number :');
-    //console.log('number is ',number);
-    var powerValue = Math.pow(2,number);
-    //console.log('Value Calculated :',powerValue);
-    var arr = [powerValue];
-		for(let j=0;j<powerValue;j++)
-		{
-			  arr[j]=j;
-    }   
-    utility.yourNumber(arr);
+var number = read.question('Enter a number :');
+var powerValue = Math.pow(2,number);
+var arr = [powerValue];
+for(let j=0;j<powerValue;j++)
+{
+	arr[j]=j;
+}   
+utility.yourNumber(arr);

@@ -11,44 +11,39 @@ var queue = new queueUsingLinked.Queue;
 var queue1 = new queueUsingLinked.Queue;
 var utility = require('../utility/Utility');
 var read = require('readline-sync');
-var util = require('util'); 
-   
-	var month = read.question('Enter the month value :');
-	var year = read.question('Enter the year value :');		
-	// months[i] = name of month i
-	// leave month[0] empty so that months[1] = "January"
-    var months = ["","January","February","March","April","May","June","July","August", "September",
+var util = require('util');  
+var month = read.question('Enter the month value :');
+var year = read.question('Enter the year value :');		
+// months[i] = name of month i
+// leave month[0] empty so that months[1] = "January"
+var months = ["","January","February","March","April","May","June","July","August", "September",
         						"October", "November", "December"];
-
-    // days[i] = number of days in month i
-    var days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+// days[i] = number of days in month i
+var days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         
-    // check for leap year
-    if (month == 2 && utility.checkLeapYear(year)) 
+// check for leap year
+if (month == 2 && utility.checkLeapYear(year)) 
         days[month] = 29;
 
-    // print calendar header
-    console.log("   " + months[month] + " " + year);     
-   
-    var weekArray = ["S","M","T","W","T","F","S"];
-    for(let i=0;i<7;i++)
-    {
-        queue.enqueue(weekArray[i]);
-    }
-    queue.display2();        //Print week days
-   
-    // starting day
-    var d = utility.dayOfWeek(1, month, year);
-    for (let i = 0; i<(d*4); i++)         
-    {
-        util.print(" ");
-    }
-
-    for (let i = 1; i <= days[month]; i++) 
-    {
-        queue1.enqueue(i);
-    }
-    queue1.displayCalender(d);
+// print calendar header
+console.log("   " + months[month] + " " + year);      
+var weekArray = ["S","M","T","W","T","F","S"];
+for(let i=0;i<7;i++)
+{
+    queue.enqueue(weekArray[i]);
+}
+queue.display2();        //Print week days
+// starting day
+var d = utility.dayOfWeek(1, month, year);
+for (let i = 0; i<(d*4); i++)         
+{
+    util.print(" ");
+}
+for (let i = 1; i <= days[month]; i++) 
+{
+    queue1.enqueue(i);
+}
+queue1.displayCalender(d);
 
   
 

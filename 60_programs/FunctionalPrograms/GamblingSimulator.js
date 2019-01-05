@@ -15,9 +15,7 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   });
-var utility = require('../utility/Utility'); 
-
-var stake, goal, trials;		
+var utility = require('../utility/Utility'); 		
 // Take input money to invest in game, goal and number of times to play.
 rl.question("Enter the money :",(stake)=>
 
