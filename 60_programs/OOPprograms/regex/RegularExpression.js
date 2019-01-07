@@ -1,4 +1,13 @@
-var utility =  require('../utility/Utility');
+/*/**********************************************************************************
+ *  Purpose         : Using Regex replace the input file with correct strings and write 
+                        the output to a Outputfile.
+ *  @file           : RegularExpression.js
+ *  @author         : Shweta Bochare
+ *  @version        : 1.0
+ *  @since          : 07-01-2018
+ **********************************************************************************/
+
+var utility =  require('../../utility/Utility');
 var read = require('readline-sync');
 
 const fileStream = require('fs');
@@ -27,7 +36,8 @@ if(status == true)
         }
         else
         {
-            console.log("Invalid fullName");  
+            console.log("Invalid fullName"); 
+            process.exit(); 
         }
     }
 }
@@ -46,9 +56,7 @@ var d = new Date();
 var date = d.getDate();
 var month = d.getMonth();
 var year = d.getFullYear();
-console.log('Today is :',date+"/"+month+"/"+year);
+var today = date+"/"+(month+1)+"/"+year;
 
-
-// var str = file.replace("<<name>>",fName).replace("<<fullname>>",fullName).replace("xxxxxxxxxx",contact).replace("<<dd-mm-yyyy>>", date);
-// console.log("Updated file..");
-// console.log(str);
+ utility.displayRegexFile(file,fName,fullName,contact,today);
+ 

@@ -60,6 +60,20 @@ class LinkedList
         console.log(str); 
     } 
 
+    // prints the list items and copy it to a string
+    printList1() 
+    { 
+        var curr = this.head; 
+        var str = ""; 
+        while (curr) 
+        { 
+            str += curr.data+" "; 
+            curr = curr.next; 
+        } 
+        return str;
+    } 
+
+
     // finds the index of element 
     indexOf(data) 
     { 

@@ -9,6 +9,7 @@
 var utility = require('../utility/Utility');
 var read = require('readline-sync');
 var util = require('util');    
+var m=4,n=2;
 var month = read.question('Enter the month value :');	
 var year = read.question('Enter the year value :');
 // months[i] = name of month i
@@ -26,7 +27,7 @@ console.log("   " + months[month] + " " + year);
 var d = utility.dayOfWeek(1, month, year);
 console.log("SUN MON TUE WED THU FRI SAT");
 // print the calendar
-for (let i = 1; i < (d*4+2); i++)
+for (let i = 1; i < (d*m+n); i++)
      util.print(" ");
 for (let i = 1; i <= days[month]; i++) 
 {

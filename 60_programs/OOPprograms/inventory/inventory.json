@@ -1,0 +1,73 @@
+{
+    "rice": [
+        {
+            "name": "basumati",
+            "weight": 2,
+            "price": 200
+        },
+        {
+            "name": "brown rice",
+            "weight": 3,
+            "price": 70
+        },
+        {
+            "name": "steam rice",
+            "weight": 4,
+            "price": 68
+        },
+        {
+            "name": "shweta",
+            "weight": "10",
+            "price": "20"
+        },
+        {
+            "name": "bgt",
+            "weight": "44",
+            "price": "55"
+        },
+        {
+            "name": "abcd",
+            "weight": "77",
+            "price": "88"
+        }
+    ],
+    "wheat": [
+        {
+            "name": "Ashirvadh",
+            "weight": 5,
+            "price": 90
+        },
+        {
+            "name": "philsberry",
+            "weight": 5,
+            "price": 100
+        },
+        {
+            "name": "patanjali",
+            "weight": 5,
+            "price": 60
+        },
+        {
+            "name": "tina",
+            "weight": "90",
+            "price": "80"
+        }
+    ],
+    "pulses": [
+        {
+            "name": "Horse gram",
+            "weight": 4,
+            "price": 90
+        },
+        {
+            "name": "Red gram",
+            "weight": 5,
+            "price": 80
+        },
+        {
+            "name": "Green gram",
+            "weight": 6,
+            "price": 60
+        }
+    ]
+}
