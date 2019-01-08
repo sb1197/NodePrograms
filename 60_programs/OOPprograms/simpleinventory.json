@@ -1,0 +1,53 @@
+{
+    "Rice": [
+        {
+            "name": "xyz",
+            "weight": "45",
+            "price": "1200"
+        },
+        {
+            "name": "pqr",
+            "weight": "55",
+            "price": "1300"
+        },
+        {
+            "name": "jsk",
+            "weight": "60",
+            "price": "1400"
+        }
+    ],
+    "pulses": [
+        {
+            "name": "basmati",
+            "weight": "10",
+            "price": "1500"
+        },
+        {
+            "name": "ashirwad",
+            "weight": "20",
+            "price": "1600"
+        },
+        {
+            "name": "qqq",
+            "weight": "30",
+            "price": "1700"
+        }
+    ],
+    "Wheats": [
+        {
+            "name": "xyz",
+            "weight": "40",
+            "price": "1800"
+        },
+        {
+            "name": "pqr",
+            "weight": "50",
+            "price": "1900"
+        },
+        {
+            "name": "jsk",
+            "weight": "60",
+            "price": "2000"
+        }
+    ]
+}

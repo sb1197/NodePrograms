@@ -158,7 +158,7 @@ function inventory()
     else if(choice == 4) 
     {
         console.log("Exiting..");
-        process.exit();    
+        process.exit(); 
     }  
     else
     {

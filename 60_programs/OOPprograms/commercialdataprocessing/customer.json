@@ -1,0 +1,39 @@
+{
+    "customerdetail": [
+        {
+            "custId": 1,
+            "custName": "manoj",
+            "symbol": "",
+            "amount": 0,
+            "shares": 0
+        },
+        {
+            "custId": 2,
+            "custName": "sonu",
+            "symbol": "",
+            "amount": 0,
+            "shares": 0
+        },
+        {
+            "custId": "88",
+            "custName": "piyu",
+            "symbol": "",
+            "amount": 0,
+            "shares": 0
+        },
+        {
+            "custId": "23",
+            "custName": "shweta",
+            "symbol": "",
+            "amount": 0,
+            "shares": 0
+        },
+        {
+            "custId": "45",
+            "custName": "yogita",
+            "symbol": "",
+            "amount": 0,
+            "shares": 0
+        }
+    ]
+}

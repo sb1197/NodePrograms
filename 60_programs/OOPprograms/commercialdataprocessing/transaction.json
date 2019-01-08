@@ -1,0 +1,11 @@
+{
+    "transaction" : [
+        {
+            "custId" : "01",
+            "type" : "buy",
+            "symbol" : "Infosys",
+            "date" : ""
+        }
+        
+    ]
+}

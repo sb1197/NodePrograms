@@ -1,0 +1,28 @@
+{
+    "Stock": [
+        {
+            "shareName": "Infosys",
+            "noOfShare": 2,
+            "sharePrice": 200,
+            "total": 400
+        },
+        {
+            "shareName": "TATA",
+            "noOfShare": 3,
+            "sharePrice": 70,
+            "total": 210
+        },
+        {
+            "shareName": "Reliance",
+            "noOfShare": "3",
+            "sharePrice": 60,
+            "total": 180
+        },
+        {
+            "shareName": "IndiaBix",
+            "noOfShare": "3",
+            "sharePrice": "20",
+            "total": 60
+        }
+    ]
+}
