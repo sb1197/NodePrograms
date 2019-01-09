@@ -1,13 +1,16 @@
 /*/**********************************************************************************
- *  Purpose         : Generates distinct cards From deck of cards.
- *  @file           : DeckOfCards.js
+ *  Purpose         : Generates distinct cards From deck of cards using Queue.
+ *  @file           : CardsQueue.js
  *  @author         : Shweta Bochare
  *  @version        : 1.0
- *  @since          : 05-01-2019
+ *  @since          : 09-01-2019
  **********************************************************************************/
 
+var read = require('readline-sync');
+const queueUsingLinked = require('./Queue');
+var queue = new queueUsingLinked.Queue;
 var util = require('util');
-var suit = ["Clubs", "Diamonds", "Hearts", "Spades"];
+var suit = ["♣️", "♦️", "❤️", "♠️"];
 var cards = ["2", "3", "4", "5", "6", "7", "8", "9", "10","Jack", "Queen", "King", "Ace"];			
 // initialize deck
 var n = suit.length * cards.length;
@@ -25,6 +28,11 @@ for (let i = 0; i < deck.length; i++)
     util.print(deck[i]+" ");	        
 }
 console.log();
+
+for (let i = 0; i < number; i++) 
+{
+    queue.enqueue(i);
+}
 // shuffle the cards to get random cards
 for (let i = 0; i < n; i++)
 {
@@ -34,8 +42,10 @@ for (let i = 0; i < n; i++)
 	deck[i] = temp;
 }	    
 // print shuffled deck
-for (let i = 0; i < 4; i++) 
+var number = read.question('Enter how many player want to play :');
+for (let i = 0; i < number; i++) 
 {
+    //queue.enqueue(i);
 	console.log("\n* Person "+(i + 1)+"*");
     for (let j = 0; j < 9; j++)
     {

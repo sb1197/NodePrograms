@@ -1,11 +1,1 @@
-{
-    "transaction" : [
-        {
-            "custId" : "01",
-            "type" : "buy",
-            "symbol" : "Infosys",
-            "date" : ""
-        }
-        
-    ]
-}
+{"transaction":[{"Id":"01","type":"buy","symbolName":"Infosys","transactionDate":""},{"Id":"88","type":"buy","symbolName":"TATA","transactionDate":"9/1/2019"},{"Id":1,"type":"sell","symbolName":"Infosys","transactionDate":"9/1/2019"},{"Id":1,"type":"sell","symbolName":"TATA","transactionDate":"9/1/2019"},{"Id":1,"type":"sell","symbolName":"Reliance","transactionDate":"9/1/2019"},{"Id":"786","type":"buy","symbolName":"Infosys","transactionDate":"9/1/2019"},{"Id":"786","type":"sell","symbolName":"Infosys","transactionDate":"9/1/2019"},{"Id":"786","type":"sell","symbolName":"TATA","transactionDate":"9/1/2019"},{"Id":"786","type":"sell","symbolName":"Reliance","transactionDate":"9/1/2019"},{"Id":"456","type":"buy","symbolName":"TATA","transactionDate":"9/1/2019"},{"Id":"456","type":"sell","symbolName":"Infosys","transactionDate":"9/1/2019"},{"Id":"890","type":"buy","symbolName":"Reliance","transactionDate":"9/1/2019"},{"Id":"34","type":"buy","symbolName":"TATA","transactionDate":"9/1/2019"}]}
