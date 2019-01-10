@@ -1,0 +1,32 @@
+{
+    "Doctors": 
+    [
+        {
+            "Name": "Dr Amit Mundra",
+            "ID": 1234,
+            "Specialization": "Heartspecialist",
+            "Availability": "AM"
+        },
+
+        {
+            "Name": "Dr Ashish Mehta",
+            "ID": 5678,
+            "Specialization": "Childspecialist",
+            "Availability": "PM"
+        },
+
+        {
+            "Name": "Dr Sunil patil",
+            "ID": 8912,
+            "Specialization": "Cardiologist",
+            "Availability": "AM"
+        },
+
+        {
+            "Name": "Dr Kunal Batra",
+            "ID": 7890,
+            "Specialization": "Childspecialist",
+            "Availability": "PM"
+        }
+   ]
+}

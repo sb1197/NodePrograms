@@ -779,11 +779,11 @@ module.exports = {
 	insertionSortString(arr, size)
 	{
 		var i , n = parseInt(size) ;
-		console.log("Elements of String array are :");
-		for(i=0;i<n;i++)
-		{
-			console.log(arr[i]);
-		}
+		// console.log("Elements of String array are :");
+		// for(i=0;i<n;i++)
+		// {
+		// 	console.log(arr[i]);
+		// }
 		for (i=1; i<n; i++) 
 		{ 
 			var key = arr[i].toString(); 
@@ -799,11 +799,12 @@ module.exports = {
 			} 
 			arr[j+1] = key; 
 		} 
-		console.log("Sorted Elements of String array using Insertion Sort are :");
-		for(i=0;i<n;i++)
-		{
-			console.log(arr[i]);
-		}
+		// console.log("Sorted Elements of String array using Insertion Sort are :");
+		// for(i=0;i<n;i++)
+		// {
+		// 	console.log(arr[i]);
+		// }
+		return arr;
 	},
 
 /*****************************************************************************/
@@ -1375,16 +1376,4 @@ module.exports = {
 		});
 	},
 /*****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
 }

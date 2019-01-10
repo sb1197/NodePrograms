@@ -6,7 +6,7 @@ class Node
     {
         this.data = data;
         this.next = null;
-    } 
+    }   
 }
 
 class Queue 
@@ -15,7 +15,8 @@ class Queue
     {
         this.head = null;
         this.tail = null;
-    }
+        this.size = 0;
+    } 
     enqueue(data)
     {
         var newNode = new Node(data);
@@ -23,11 +24,13 @@ class Queue
         {
             this.head = newNode;
             this.tail = newNode;
-        } else 
+        }
+        else 
         {
             this.tail.next = newNode;
             this.tail = newNode;
         }
+        this.size++;
     }
     dequeue() 
     {
@@ -36,89 +39,71 @@ class Queue
             newNode = this.head.data;
             this.head = this.head.next;
         }
+        this.size--;
         return newNode;
     }
-    print() 
-    {
-        var week = "";
-        var curr = this.head;
-        while (curr) 
-        {
-           // console.log(curr.data);
-            week += curr.data +" " ;
-            curr = curr.next;
-        }
-        return week;
-    }
     display() 
-    {     
+    {   
         var curr = this.head;
         while (curr) 
         {
-            console.log(curr.data);
-            
+            console.log(curr.data);   
             curr = curr.next;
-        }
-        
+        }      
+    }
+
+    getData() 
+    {   
+        var str = [];
+        var curr = this.head;
+        while (curr) 
+        {
+            str.push(curr.data);   
+            curr = curr.next;
+        }  
+
+        return str;   
     }
     isEmpty()
     {
         return this.head == null;
     }
-    displayCalender(d)
-	{
-		var show = require('util');
-		var t = this.head;	
-		var count = 0;
-		while(t!=null)
-		{   
-			count++;
-			show.print("  ", t.data);
-			if(t.data < 10)
-			{
-				show.print(" ");
-			}
-		
-			if (((count + d) % 7 == 0) )
-			{
-				console.log("");
-			}
-			t = t.next;
-		}
-		count = 0;
-	}
-    display2()
-    {
-        var t = this.head;
-        var show = require('util');
-        while(t!=null)
-        {
-            show.print("  "+t.data);
-            if(t.next!=null)
-                show.print(" ");
-            t = t.next;
-        }
-        console.log();
-    }
-    displayReverse(head) {
-        var show = require('util');
-        if (head == null)
-            return;
-    
-        this.displayReverse(head.next);
-        show.print(head.data);
-        if (head.next != head)
-            show.print("-->");   
-    }
     getHead() 
     {
         return this.head;
+    }
+
+    sort() 
+    {
+        var len = this.size;
+        if (len > 1) 
+        {
+            for (let i = 0; i < len;i++) 
+            {
+                var currentNode = this.head;
+                var next = this.head.next;
+                for (let j = 0; j < len - 1; j++) 
+                {
+                    if (currentNode.data > next.data) 
+                    {
+                        var temp = currentNode;
+                        currentNode = next;
+                        next = temp;
+                    } 
+                    currentNode = next;
+                    next = next.next;                   
+                } 
+            }
+        }
     }
 }
 
 module.exports = {
     Queue
 }
+
+
+
 
 // var queue = new Queue();
 //   queue.enqueue(10);

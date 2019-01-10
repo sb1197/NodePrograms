@@ -80,8 +80,7 @@ function Stocklinkedlist()
     else if(choice == 5)
     {
         console.log("exit");
-        process.exit();
-        
+        process.exit();      
     }
     else 
     {

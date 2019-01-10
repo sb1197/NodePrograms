@@ -1,12 +1,11 @@
 /*/**********************************************************************************
- *  Purpose         : Commercial data processing implements a data type that might be used 
-                        by a financial institution to keep track of customer information.
+ *  Purpose         : Commercial data processing that implements a data type to keep 
+                        track of customer information.
  *  @file           : mainCommercial.js
  *  @author         : Shweta Bochare
  *  @version        : 1.0
  *  @since          : 09-01-2019
  **********************************************************************************/
-
 var read = require('readline-sync');
 var fs = require('fs');
 //read file from inventory.json 
@@ -17,7 +16,7 @@ var element2 = fs.readFileSync('transaction.json');
 var companyData = JSON.parse(element);
 var customerData = JSON.parse(element1);
 var transactionData = JSON.parse(element2);
-function commercial() 
+function StockAccount() 
 {
     console.log('\n*** COMMERCIAL DATA PROCESSING ***');
     console.log('1.Create Account \n2.Open Account \n3.Edit Company \n4.Exit');
@@ -35,13 +34,10 @@ function commercial()
             amount: 0,
             shares: 0
         });
-        fs.writeFileSync('./customer.json', JSON.stringify(customerData), 'utf-8', function () 
-        {
-            console.log('done')
-        });
+        fs.writeFileSync('./customer.json', JSON.stringify(customerData));
         console.log('Customer added successfully.');
         console.log(customerData);
-        commercial();
+        StockAccount();
     }
     else if (choiceOperation == 2) 
     {
@@ -71,26 +67,17 @@ function commercial()
                             if (buy < companyData.company[i].totalShare) 
                             {
                                 console.log('Price of per share = ', companyData.company[i].pricePerShare);
-                                var total = parseInt(buy * companyData.company[i].pricePerShare);
+                                var total = Number(buy * companyData.company[i].pricePerShare);
                                 console.log('Total cost of share will be :', total);
                                 if (customerData.customerdetail[j].amount > total) 
-                                {
-                                    //console.log('You have sufficient balance.'); 
-                                    customerData.customerdetail[j].amount = parseInt(customerData.customerdetail[j].amount - total);
+                                { 
+                                    customerData.customerdetail[j].amount = parseInt(Number(customerData.customerdetail[j].amount) - Number(total));
                                     console.log('After buying shares your current balance is :', customerData.customerdetail[j].amount);
-                                    customerData.customerdetail[j].shares = parseInt(customerData.customerdetail[j].shares + buy);
+                                    customerData.customerdetail[j].shares = parseInt(Number(customerData.customerdetail[j].shares) + Number(buy));
                                     console.log('After buying shares your current shares are :', customerData.customerdetail[j].shares);
-                                    companyData.company[i].totalShare = parseInt(companyData.company[i].totalShare - buy);
-                                    fs.writeFileSync('./customer.json', JSON.stringify(customerData), 'utf-8', function () 
-                                    {
-                                        console.log('done')
-                                    });
-                                    fs.writeFileSync('./company.json', JSON.stringify(companyData), 'utf-8', function () 
-                                    {
-                                        console.log('done')
-                                    });
-                                    //console.log(companyData);
-                                    //console.log(customerData); 
+                                    companyData.company[i].totalShare = parseInt(Number(companyData.company[i].totalShare) - Number(buy));
+                                    fs.writeFileSync('./customer.json', JSON.stringify(customerData));
+                                    fs.writeFileSync('./company.json', JSON.stringify(companyData));
                                     var d = new Date();
                                     var date = d.getDate();
                                     var month = d.getMonth();
@@ -103,16 +90,14 @@ function commercial()
                                         symbolName: companyData.company[i].symbol,
                                         transactionDate: date + "/" + (month + 1) + "/" + year
                                     });
-                                    fs.writeFileSync('./transaction.json', JSON.stringify(transactionData), 'utf-8', function () {
-                                        console.log('done')
-                                    });
+                                    fs.writeFileSync('./transaction.json', JSON.stringify(transactionData));
                                     console.log('transaction added after buy..');
-                                    process.exit();
+                                    StockAccount();
                                 }
                                 else 
                                 {
                                     console.log('You have insufficient balance.');
-                                    process.exit();
+                                    StockAccount();
                                 }
                             }
                             else 
@@ -122,7 +107,7 @@ function commercial()
                             }
                         }
                     }
-                    commercial();
+                    StockAccount();
                 }
                 else if (performOp == 2) 
                 {
@@ -131,16 +116,13 @@ function commercial()
                     var sellShare = read.question('Enter how many shares you want to sell :');
                     if (sellShare < customerData.customerdetail[j].shares) 
                     {
-                        // var perShareAmountToSell = read.question('Enter price of per share to sell :');
-                        // var addAmount = parseInt(sellShare * perShareAmountToSell);
-                        // customerData.customerdetail[i].amount = parseInt(customerData.customerdetail[i].amount + addAmount);
                         var companyToSell = read.question('Enter compnay name to sell shares :');
                         for (var i = 0; i < companyData.company.length; i++) 
                         {
                             if (companyToSell === companyData.company[i].symbol) 
                             {
-                                companyData.company[i].totalShare = parseInt(parseInt(companyData.company[i].totalShare) + parseInt(sellShare));
-                                customerData.customerdetail[j].shares = parseInt(customerData.customerdetail[j].shares - sellShare);
+                                companyData.company[i].totalShare = Number(Number(companyData.company[i].totalShare) + Number(sellShare));
+                                customerData.customerdetail[j].shares = Number(customerData.customerdetail[j].shares - sellShare);
                                 var d = new Date();
                                 var date = d.getDate();
                                 var month = d.getMonth();
@@ -157,34 +139,26 @@ function commercial()
                                 });   
                             } 
                         }
-                        fs.writeFileSync('./transaction.json', JSON.stringify(transactionData), 'utf-8', function () {
-                            console.log('done')
-                        });
+                        fs.writeFileSync('./transaction.json', JSON.stringify(transactionData));
                         console.log('transaction added after sell..');
-                        fs.writeFileSync('./customer.json', JSON.stringify(customerData), 'utf-8', function () {
-                            console.log('done')
-                        });
-                        fs.writeFileSync('./company.json', JSON.stringify(companyData), 'utf-8', function () {
-                            console.log('done')
-                        });
+                        fs.writeFileSync('./customer.json', JSON.stringify(customerData));
+                        fs.writeFileSync('./company.json', JSON.stringify(companyData));
                         console.log('Shares sold successfully.');
-                        process.exit();
+                        StockAccount();
                     }
                     else 
                     {
                         console.log('No of shares to sell is greater than total shares you have.');
                     }
-                    commercial();
+                    StockAccount();
                 }
                 else if (performOp == 3) 
                 {
                     var updateAmount = read.question('Enter amount to add :');
-                    customerData.customerdetail[j].amount = parseInt(customerData.customerdetail[j].amount + updateAmount);
+                    customerData.customerdetail[j].amount = parseInt(Number(customerData.customerdetail[j].amount) + Number(updateAmount));
                     console.log(customerData.customerdetail[j]);
-                    fs.writeFileSync('./customer.json', JSON.stringify(customerData), 'utf-8', function () {
-                        console.log('done')
-                    });
-                    commercial();
+                    fs.writeFileSync('./customer.json', JSON.stringify(customerData));
+                    StockAccount();
                 }
                 else if (performOp == 4) 
                 {
@@ -193,11 +167,10 @@ function commercial()
                 }
                 else if (performOp == 5) 
                 {
-                    commercial();
+                    StockAccount();
                 }
             }
         }
-
     }
     // TO EDIT COMPANY 
     else if (choiceOperation == 3) 
@@ -222,7 +195,7 @@ function commercial()
             });
             console.log("Company Added Successfully.");
             console.log(companyData);
-            commercial();
+            StockAccount();
         }
         // TO REMOVE COMPANY 
         else if (compChoice == 2) 
@@ -235,18 +208,15 @@ function commercial()
                     companyData.company.splice(i, 1);
                 }
             }
-            fs.writeFileSync('./company.json', JSON.stringify(companyData), 'utf-8', function () 
-            {
-                console.log('done')
-            });
+            fs.writeFileSync('./company.json', JSON.stringify(companyData));
             console.log('Company Removed Successfully.');
             console.log(companyData);
-            commercial();
+            StockAccount();
         }
         else if (compChoice == 3) 
         {
             console.log('Back to main menu :');
-            commercial();
+            StockAccount();
         }
         else {
             console.log('Invalid choice.');
@@ -263,4 +233,4 @@ function commercial()
         console.log('Invalid choice.');
     }
 }
-commercial();
+StockAccount();
